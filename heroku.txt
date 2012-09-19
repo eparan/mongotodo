@@ -1,0 +1,48 @@
+
+>git init
+Initialized empty Git repository in D:/Wong/backbonejs/mongotodo/.git/
+
+>git add .
+warning: LF will be replaced by CRLF in public/js/libs/jquery-1.6.2.js.
+The file will have its original line endings in your working directory.
+
+>git commit -m "init"
+[master (root-commit) 6f4ad27] init
+warning: LF will be replaced by CRLF in public/js/libs/jquery-1.6.2.js.
+The file will have its original line endings in your working directory.
+ 12 files changed, 11404 insertions(+), 0 deletions(-)
+ create mode 100644 app.rb
+
+>git remote add github https://github.com/eparan/mongotodo.git
+
+>git push -u github master
+Username for 'https://github.com':
+Password for 'https://eparan@github.com':
+Counting objects: 19, done.
+Delta compression using up to 2 threads.
+Compressing objects: 100% (17/17), done.
+Writing objects: 100% (19/19), 136.87 KiB, done.
+Total 19 (delta 0), reused 0 (delta 0)
+To https://github.com/eparan/mongotodo.git
+ * [new branch]      master -> master
+Branch master set up to track remote branch master from github.
+
+
+>heroku login
+Enter your Heroku credentials.
+Email: eparan@gmail.com
+Password (typing will be hidden):
+Authentication failed.
+Enter your Heroku credentials.
+Email: eparan@gmail.com
+Password (typing will be hidden):
+Authentication successful.
+
+>heroku create mongotodo --stack cedar
+Creating mongotodo... done, stack is cedar
+http://mongotodo.herokuapp.com/ | git@heroku.com:mongotodo.git
+
+>heroku addons:add mongohq:free --mongotodo
+
+>git remote add heroku http://mongotodo.herokuapp.com/
+

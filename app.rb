@@ -3,6 +3,7 @@ require 'sinatra'
 require 'mongo'
 require 'json'
 
+
 DB = Mongo::Connection.new.db("mydb", :spool_size => 5, :timeout => 5)
 
 class TodoApp < Sinatra::Base
