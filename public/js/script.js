@@ -129,6 +129,8 @@ $(function(){
     // persisting it to *localStorage*
     createOnEnter: function(e){
       var text = this.val();
+      console.log(text);
+      console.log(e.keyCode);
       if(!text || e.keyCode != 13) return;
       Todos.create({text:text});
       this.val("");
