@@ -124,7 +124,7 @@ $(function(){
     },
 
     // If you hit "enter" we're througth editing the item.
-    updateOnEnter:function() {
+    updateOnEnter:function(e) {
       if(e.keyCode == 13) this.close();
     },
 
