@@ -38,7 +38,7 @@ $(function(){
     url: "/api/todos",
 
     // Filter down the list of all todo items that are finished.
-    done: function(){
+    done : function(){
       return this.filter(function(todo){return todo.get("done");});
     },
 
