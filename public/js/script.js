@@ -67,6 +67,81 @@ $(function(){
 /// AppView
 */
 
+// The Dom element for a todo item...
+  TodoView = Backbone.View.extend({
+
+    // .... is a list tag
+    tagName : "li",
+
+    // Cache the template function for a single item.
+    template : _.template($('#item-template').html()),
+
+    // the DOM events specific to an item.
+    events: {
+      "click .check" : "toggleDone",
+      "dbClick div.todo-text" : "edit",
+      "click span.todo-destroy" : "clear",
+      "keypress .todo-input" : "updateOnEnter"
+    },
+
+    // The TodoView listens for changes to its model, re-rendering.
+    initialize: function(){
+        this.model.bind('change', this.render, this);
+        this.model.bind('destroy', this.remove, this);
+    },
+
+    // Re-render the contents of the todo item.
+    render: function(){
+      $(this.el).html(this.template(this.model.toJSON()));
+      this.setText();
+      return this;
+    },
+
+    // To avoid XSS (not that it would be harmful in this particular app),
+    // we use 'JQuery.text' to set the contents of the todo item.
+    setText:function(){
+      var text = this.model.get('text');
+      this.$('$todo-text').textx(text);
+      this.input = this.$('.todo-input');
+      this.input.bind('blur', _.bind(this.close, this)).val(text);
+    },
+
+    // Toggle the "done" state of the model.
+    toggleDone : function() {
+      this.model.toggle();
+    },
+
+    // Switch this view into "editing" mode, display the input field.
+    edit: function() {
+      $(this.el).addClass("editing");
+      this.input.focus();
+    },
+
+    // Close the "editing" mode, saving changes to the todo.
+    Close : function() {
+      this.model.save({text:this.input.val()});
+      $(this.el).removeClass("editing");
+    },
+
+    // If you hit "enter" we're througth editing the item.
+    updateOnEnter:function() {
+      if(e.keyCode == 13) this.close();
+    },
+
+    // Remove this view form the DOM.
+    remove : function(){
+      $(this.el).remove();
+    },
+
+    // Remove the item, destroy the model.
+    Clear : function() {
+      this.model.destroy();
+    }
+
+
+  });
+
+
 // Our overall **AppView** is the top-level piece of UI.
   AppView = Backbone.View.extend({
 
