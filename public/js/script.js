@@ -101,7 +101,7 @@ $(function(){
     // we use 'JQuery.text' to set the contents of the todo item.
     setText:function(){
       var text = this.model.get('text');
-      this.$('$todo-text').textx(text);
+      this.$('.todo-text').text(text);
       this.input = this.$('.todo-input');
       this.input.bind('blur', _.bind(this.close, this)).val(text);
     },
@@ -172,7 +172,7 @@ $(function(){
     // Re-rendering the App just means refreshing the satistics -- 
     // the rest of the app doesn't change.
     render: function(){
-      this.$("todo-stats").html(this.statsTemplate({
+      this.$("#todo-stats").html(this.statsTemplate({
         total : Todos.length,
         done: Todos.done().length,
         remaining: Todos.remaining().length
