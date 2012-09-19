@@ -72,7 +72,7 @@ $(function(){
 
     // Instead of generating a new element, bind to the existing skeleton of 
     // the App already present in the HTML.
-    el:$("todoapp"),
+    el:$("#todoapp"),
 
     // Our template for the line of creating new item, and clearing completed ones.
     statsTemplate : _.template($("#stats-template").html()),
@@ -128,12 +128,12 @@ $(function(){
     // If you hit return in the main input field, create new **Todo** model,
     // persisting it to *localStorage*
     createOnEnter: function(e){
-      var text = this.val();
+      var text = this.input.val();
       console.log(text);
       console.log(e.keyCode);
       if(!text || e.keyCode != 13) return;
       Todos.create({text:text});
-      this.val("");
+      this.input.val("");
     },
 
     // Clear all done todo items, destroying their models.
