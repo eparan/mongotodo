@@ -10,6 +10,8 @@ GEM
     json (1.7.5)
     mongo (1.7.0)
       bson (~> 1.7.0)
+    mongodb (2.1.0)
+      mongo (~> 1.5)
     rack (1.4.1)
     rack-protection (1.2.0)
       rack
@@ -31,6 +33,7 @@ DEPENDENCIES
   haml
   json
   mongo
+  mongodb
   rack
   sinatra
   thin

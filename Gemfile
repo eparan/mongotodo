@@ -3,6 +3,7 @@ source :rubygems
 
 gem 'sinatra'
 gem 'mongo'
+gem 'mongodb'
 gem 'json'
 gem 'haml'
 gem 'rack'
