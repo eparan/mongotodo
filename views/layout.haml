@@ -1,0 +1,31 @@
+!!!5
+%head
+  %meta{'charset' => 'utf-8'}/
+  %title=title
+  %meta{'name' => 'description', 'content' => ''}/
+  %meta{'name' => 'author', 'content' => ''}/
+  %meta{'name' => 'viewpoint', 'content' => 'width=device-width,initial-scale=1'}/
+
+  / CSS concatenated and minified via ant build script
+  %link{'rel' => 'stylesheet', 'href' => 'css/style.css'}/
+  / end CSS
+
+  %script{'src' => 'js/libs/modernizr.min.js'}
+
+%body
+  %div#container
+    %header
+    %div#main
+      = yield
+    %footer
+  /! end of #conatainer
+
+  %script{'src' => 'http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js'}
+
+  / scripts concatenated and minified via ant build script
+  %script{'src' => 'js/mylibs/underscore.js'}
+  %script{'src' => 'js/mylibs/backbone.js'}
+  %script{'defer' => true, 'src' => 'js/plugins.js'}
+  %script{'defer' => true, 'src' => 'js/script.js'}
+  / end scripts
+  
