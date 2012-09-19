@@ -87,9 +87,9 @@ $(function(){
     // At initialization
     initialize: function(){
       this.input = this.$("#new-todo");
-      Todos.on("add", this.addOne, this);
-      Todos.on("reset", this.addAll, this);
-      Todos.on("all", this.render, this);
+      Todos.bind("add", this.addOne, this);
+      Todos.bind("reset", this.addAll, this);
+      Todos.bind("all", this.render, this);
 
       Todos.fetch();
     },
