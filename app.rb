@@ -19,9 +19,8 @@ def get_connection
 end
 DB = get_connection
 
-
 get '/' do
-  haml :index,  :attr_wrapper => '"', :locals => {:title => 'hello'}
+  haml :index, :attr_wrapper => '"', :locals => {:title => 'hello'}
 end
 
 get '/todo' do
