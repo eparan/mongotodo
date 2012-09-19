@@ -30,7 +30,7 @@ end
 get '/api/:thing' do
   # query a collection :thing, convert the output to an array, map the _id
   # to a string representation of the object's _id and finally output to JSON.
-  DB.collecton(params[:thing]).find.to_a.map{|t| from_bson_id(t)}.to_json
+  DB.collection(params[:thing]).find.to_a.map{|t| from_bson_id(t)}.to_json
 end
 
 get '/api/:thing/:id' do
