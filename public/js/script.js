@@ -80,7 +80,7 @@ $(function(){
     events: {
       "click .check" : "toggleDone",
       "dbClick div.todo-text" : "edit",
-      "click span.todo-destroy" : "Clear",
+      "click span.todo-destroy" : "clear",
       "keypress .todo-input" : "updateOnEnter"
     },
 
@@ -118,7 +118,7 @@ $(function(){
     },
 
     // Close the "editing" mode, saving changes to the todo.
-    Close : function() {
+    close : function() {
       this.model.save({text:this.input.val()});
       $(this.el).removeClass("editing");
     },
@@ -134,7 +134,7 @@ $(function(){
     },
 
     // Remove the item, destroy the model.
-    Clear : function() {
+    clear : function() {
       this.model.destroy();
     }
 
