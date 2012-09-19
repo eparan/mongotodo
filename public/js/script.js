@@ -1,3 +1,6 @@
+
+$(function(){
+
 /*
 // Models
 /// Todo
@@ -152,5 +155,5 @@ var AppView = Backbone.Views.extend({
 
 return AppView;
 
-
+});
 
