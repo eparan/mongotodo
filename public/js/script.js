@@ -148,7 +148,7 @@ $(function(){
       if (this.tootipTimeout) clearTimeout(this.tooltipTimeout);
       if (val == '' || val == this.input.attr('placeholder')) return;
       var show = function(){tooltip.show().fadeIn();};
-      this.tooltipTimeout = _.delay(show.1000);
+      this.tooltipTimeout = _.delay(show, 1000);
     }
 
   });
