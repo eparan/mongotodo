@@ -128,10 +128,10 @@ $(function(){
     // If you hit return in the main input field, create new **Todo** model,
     // persisting it to *localStorage*
     createOnEnter: function(e){
-      var text = this.input.val();
+      var text = this.val();
       if(!text || e.keyCode != 13) return;
       Todos.create({text:text});
-      this.input.val("");
+      this.val("");
     },
 
     // Clear all done todo items, destroying their models.
