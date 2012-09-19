@@ -153,6 +153,7 @@ $(function(){
 
   });
 
+  var Todos = new TodoList();
   var appView = new AppView();
 
 });
