@@ -77,3 +77,9 @@ mongodb://<user>:<password>@alex.mongohq.com:10025/app7713234
 mongodb://heroku:heroku@alex.mongohq.com:10025/app7713234
 
 
+heroku ps
+heroku config
+heroku restart
+heroku config:remove 
+heroku config:add
+heroku 
