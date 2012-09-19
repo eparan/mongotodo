@@ -6,3 +6,4 @@ gem 'mongo'
 gem 'json'
 gem 'rack'
 gem 'thin'
+gem "bson_ext"
