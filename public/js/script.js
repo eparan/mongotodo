@@ -80,7 +80,7 @@ $(function(){
     events: {
       "click .check" : "toggleDone",
       "dbClick div.todo-text" : "edit",
-      "click span.todo-destroy" : "clear",
+      "click span.todo-destroy" : "Clear",
       "keypress .todo-input" : "updateOnEnter"
     },
 
