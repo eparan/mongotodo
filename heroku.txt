@@ -45,6 +45,8 @@ The file will have its original line endings in your working directory.
 warning: LF will be replaced by CRLF in Gemfile.lock.
  create mode 100644 heroku.txt
 
+>git commit -a -m "add all"
+
 
 >heroku login
 Enter your Heroku credentials.
