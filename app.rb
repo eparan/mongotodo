@@ -46,6 +46,6 @@ class TodoApp < Sinatra::Base
   end
 
   def to_bson_id(id) BSON::ObjectId.from_string(id) end
-  def from_bson_id(obj) obj.merge({'_id' = obj['_id'].to_s}) end
+  def from_bson_id(obj) obj.merge({'_id' => obj['_id'].to_s}) end
 
 end

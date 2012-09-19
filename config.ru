@@ -4,6 +4,7 @@ require 'mongo'
 require 'json'
 require 'haml'
 
+require './app'
 
 Bundler.require
 
