@@ -1,7 +1,9 @@
 require 'rubygems'
-require 'bundler'
 require 'sinatra'
-require './main'
+require 'mongo'
+require 'json'
+require 'haml'
+require './app'
 
 Bundler.require
 

@@ -27,6 +27,24 @@ To https://github.com/eparan/mongotodo.git
  * [new branch]      master -> master
 Branch master set up to track remote branch master from github.
 
+>bundle update
+Fetching gem metadata from http://rubygems.org/...........
+Using thin (1.4.1)
+Using bundler (1.1.2)
+Your bundle is updated! Use `bundle show [gemname]` to see where a bundled gem i
+s installed.
+
+>git add .
+warning: LF will be replaced by CRLF in Gemfile.lock.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in config.ru.
+The file will have its original line endings in your working directory.
+
+>git commit -m "bundle update"
+[master 667bb58] bundle update
+warning: LF will be replaced by CRLF in Gemfile.lock.
+ create mode 100644 heroku.txt
+
 
 >heroku login
 Enter your Heroku credentials.
@@ -45,4 +63,17 @@ http://mongotodo.herokuapp.com/ | git@heroku.com:mongotodo.git
 >heroku addons:add mongohq:free --mongotodo
 
 >git remote add heroku http://mongotodo.herokuapp.com/
+
+>git push -u heroku master
+Enter passphrase for key '/c/Users/kandh/.ssh/id_rsa':
+To git@heroku.com:mongotodo.git
+ * [new branch]      master -> master
+Branch master set up to track remote branch master from heroku.
+
+
+
+
+mongodb://<user>:<password>@alex.mongohq.com:10025/app7713234
+mongodb://heroku:heroku@alex.mongohq.com:10025/app7713234
+
 
