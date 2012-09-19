@@ -8,8 +8,8 @@ require 'uri'
 # puts "Running on MongoHQ" 
 # heroku config:add 
 uri = URI.parse(ENV['MONGOHQ_URL'])
-DB = Mongo::Connection.new(uri).db(uri.path.gsub(/^\//, ''))
-DB.authenticate(uri.user, uri.password)
+conn = Mongo::Connection.from_uri(ENV['MONGOHQ_URL'])
+DB = conn.db(uri.path.gsub(/^\//, ''))
 
 class TodoApp < Sinatra::Base
 
