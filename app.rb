@@ -48,6 +48,7 @@ end
 
 put '/api/:thing/:id' do
   DB.collection(params[:thing]).update({'_id' => to_bson_id(params[:id])}, {'$set' => JSON.parse(request.body.read.to_s).reject{|k,v| k == '_id'}})
+  JSON.parse(request.body.read.to_s)
 end
 
 def to_bson_id(id) BSON::ObjectId.from_string(id) end
