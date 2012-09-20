@@ -47,8 +47,9 @@ delete '/api/:thing/:id' do
 end
 
 put '/api/:thing/:id' do
-  DB.collection(params[:thing]).update({'_id' => to_bson_id(params[:id])}, {'$set' => JSON.parse(request.body.read.to_s).reject{|k,v| k == '_id'}})
-  JSON.parse(request.body.read.to_s)
+  todo = request.body.read.to_s
+  DB.collection(params[:thing]).update({'_id' => to_bson_id(params[:id])}, {'$set' => JSON.parse(todo).reject{|k,v| k == '_id'}})
+  todo
 end
 
 def to_bson_id(id) BSON::ObjectId.from_string(id) end
